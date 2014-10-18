@@ -1,0 +1,29 @@
+{
+  "name": "flatui",
+  "version": "1.0.0",
+  "description": "a require()able version of the Flat-UI CSS",
+  "main": "index.js",
+  "scripts": {
+    "build": "gasket run download && gasket run pack"
+  },
+  "gasket": {
+    "download": [
+      "rm -rf ./Flat-UI-master",
+      null,
+      "nugget https://github.com/designmodo/Flat-UI/archive/master.zip",
+      null,
+      "extract-zip master.zip"
+    ],
+    "pack": [
+      "packify-css Flat-UI-master/dist/css/flat-ui.css"
+    ]
+  },
+  "author": "max ogden",
+  "license": "BSD",
+  "devDependencies": {
+    "extract-zip": "^1.0.3",
+    "gasket": "^1.2.3",
+    "nugget": "^1.0.0",
+    "packify-css": "^1.0.0"
+  }
+}
