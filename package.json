@@ -4,7 +4,7 @@
   "description": "a require()able version of the Flat-UI CSS",
   "main": "index.js",
   "scripts": {
-    "build": "gasket run download && gasket run pack"
+    "build": "gasket run download && gasket run pack > flatui.css"
   },
   "gasket": {
     "download": [
@@ -20,10 +20,14 @@
   },
   "author": "max ogden",
   "license": "BSD",
+  "browserify": { "transform": [ "brfs" ] },
   "devDependencies": {
     "extract-zip": "^1.0.3",
     "gasket": "^1.2.3",
     "nugget": "^1.0.0",
     "packify-css": "^1.0.0"
+  },
+  "dependencies": {
+    "brfs": "^1.2.0"
   }
 }
